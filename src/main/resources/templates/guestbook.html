@@ -40,7 +40,7 @@
 						<blockquote class="entrytext" th:text="${entry.text}"></blockquote>
 					</div>
 					<div class="card-footer">
-						<footer class="eMail" th:text="${entry.eMail}"></footer>
+						<footer class="email" th:text="${entry.email}"></footer>
 					</div>
 					<div class="card-footer">
 						<footer class="date" th:text="${#temporals.format(entry.date, 'dd. MMMM yyyy - HH:mm')}">Datum</footer>
@@ -58,9 +58,9 @@
 				<div th:if="${#fields.hasErrors('name')}" class="invalid-feedback" th:text="#{guestbook.form.name.required}">Please provide a name.</div>
 			</div>
 			<div class="form-group">
-				<label for="eMail" th:text="#{guestbook.form.eMail}">Name</label><br />
-				<input class="form-control" type="text" th:field="*{eMail}" th:errorclass="is-invalid" required="required" />
-				<div th:if="${#fields.hasErrors('eMail')}" class="invalid-feedback" th:text="#{guestbook.form.eMail.required}">Please provide an eMail .</div>
+				<label for="email" th:text="#{guestbook.form.email}">Name</label><br />
+				<input class="form-control" type="email" th:field="*{email}" th:errorclass="is-invalid" required="required" />
+				<div th:if="${#fields.hasErrors('email')}" class="invalid-feedback" th:text="#{guestbook.form.email.required}">Please provide an E-Mail.</div>
 			</div>
 			<div class="form-group">
 				<label for="text" th:text="#{guestbook.form.text}">Text</label><br />
